@@ -17,5 +17,10 @@ brew bundle --file="Brewfile"
 # chmod go-w '/usr/local/share'
 # chmod -R go-w '/usr/local/share/zsh'
 
+if [ -f ~/.gitconfig ]; then
+	echo ".gitconfig file already exists. Backing up."
+	mv ~/.gitconfig ~/.gitconfig.bak
+fi
+
 # Stow the dotfiles
 stow -v -R -t ~ alacritty git nvim tmux zsh

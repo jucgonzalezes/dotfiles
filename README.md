@@ -18,6 +18,25 @@ across different machines.
 brew install stow
 ```
 
+2. Install p10k
+
+3. Install Meslo Lg Nerd Font
+
+```bash
+brew install font-meslo-lg-nerd-font
+```
+
+4. Install ZSH extensions
+
+WARNING: The installation may include changing the permissions of some folders
+and forcing rebuilds.
+
+```bash
+brew install zsh-autosuggestions
+brew install zsh-syyntax-highlighting
+brew install zsh-completions
+```
+
 ## Installation
 
 1. Clone the repository

@@ -1,0 +1,24 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: flyci-macos-14-m2
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Homebrew
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+      - name: Install pre-stow dependencies
+        run: brew bundle --file=Brewfile.pre
+
+      - name: Run install script
+        run: bash bin/install.sh
+
+      - name: Run tests
+        run: |
+          bash tests/test_installation.sh
+          bash tests/test_symlinks.sh

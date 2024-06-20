@@ -20,6 +20,16 @@ brew install stow
 
 2. Install p10k
 
+```bash
+brew install powerlevel10k
+```
+
+3. Install fzf
+
+```bash
+brew install fzf
+```
+
 3. Install Meslo Lg Nerd Font
 
 ```bash

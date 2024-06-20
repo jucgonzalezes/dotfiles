@@ -56,6 +56,12 @@ git clone https://github.com/jucgonzalezes/dotfiles.git
 cd dotfiles
 ```
 
+2. Install alacritty
+
+```bash
+brew install alacritty
+```
+
 2. Use GNU Stow
 
 ```bash

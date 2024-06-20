@@ -6,14 +6,16 @@ if ! command -v brew &>/dev/null; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# cd ..
+echo "Current directory: $PWD"
+
 # Install prerequisites using Brewfile
 echo "Installing packages with brew..."
-brew bundle --file="../Brewfile"
+brew bundle --file="Brewfile"
 
 # Change permissions
 # chmod go-w '/usr/local/share'
 # chmod -R go-w '/usr/local/share/zsh'
 
 # Stow the dotfiles
-cd ..
 stow -v -R -t ~ alacritty git nvim tmux zsh

@@ -21,7 +21,7 @@ source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # ---------- PLUGINS
@@ -37,8 +37,8 @@ if type brew &>/dev/null; then
     compinit
   fi
 
-chmod go-w '/usr/local/share' 
-chmod -R go-w '/usr/local/share/zsh'
+# chmod go-w '/usr/local/share' 
+# chmod -R go-w '/usr/local/share/zsh'
 
 # plugins=(`#git` zsh-autosuggestions vi-mode)
 

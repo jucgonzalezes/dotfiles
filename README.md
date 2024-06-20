@@ -62,7 +62,13 @@ cd dotfiles
 brew install alacritty
 ```
 
-2. Use GNU Stow
+3. Install Neovim
+
+```bash
+brew install nvim
+```
+
+4. Use GNU Stow
 
 ```bash
 stow -v -R -t ~ alacritty git nvim tmux zsh

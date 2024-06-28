@@ -74,9 +74,6 @@ alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
 # ---------- ALIASES
 alias apcvm='docker run -it -v `pwd`:/project mfisherman/openmpi'
-alias daserver='ssh -i ~/.ssh/public_ssh gonzalez@131.175.120.104'
-alias monster='ssh gonzales@10.79.23.167'
-alias thesis='cd OneDrive\ -\ Politecnico\ di\ Milano/Thesis/Thesis'
 alias ls='ls --color=always'
 
 

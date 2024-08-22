@@ -1,13 +1,38 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
 
--- overwrite lazyvim mappings with vim-tmux-navigator mappings
--- see: https://github.com/christoomey/vim-tmux-navigator/blob/master/plugin/tmux_navigator.vim
-vim.cmd([[
-  noremap <silent> <c-h> :<C-U>TmuxNavigateLeft<cr>
-  noremap <silent> <c-j> :<C-U>TmuxNavigateDown<cr>
-  noremap <silent> <c-k> :<C-U>TmuxNavigateUp<cr>
-  noremap <silent> <c-l> :<C-U>TmuxNavigateRight<cr>
-  noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
-]])
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- vim.api.nvim_set_keymap("n", "<Esc>", ":nohlsearch<CR>", { noremap = true, silent = true })
+
+
+vim.keymap.set( {"n", "i"}, "<Esc>", "<Cmd>noh<CR><Esc>", { desc = "Clear search highlight", silent = true} )
+-- vim.keymap.set( "n", "<leader>l", "<cmd>Lazy<cr>", { desc = "LazyVim", silent = true} )
+vim.keymap.set( "n", "l", "<cmd>Lazy<cr>", { desc = "LazyVim", silent = true} )
+vim.keymap.set( "n", "<leader>l", "<cmd>Lazy<cr>", { desc = "LazyVim", silent = true} )
+
+
+
+-- local wk = require("which-key")
+-- wk.add({
+--     { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Clear search highlight" }
+-- })
+--
+
+-- local status_ok, which_key = pcall(require, "which-key")
+--
+-- local opts = {
+--     mode = "n",
+--     prefix = "<leader>",
+-- }
+--
+-- local mappings = {
+--     { "l", "<cmd>Lazy<CR>", desc = "Lazy Plugin Manager" },
+--     { "w", "<cmd>w!", desc = "Bye bye! "},
+-- }
+--
+--
+-- which_key.setup()
+-- which_key.register(mappings, opts)
+

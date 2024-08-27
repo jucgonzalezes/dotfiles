@@ -8,9 +8,10 @@ vim.g.maplocalleader = "\\"
 
 
 vim.keymap.set( {"n", "i"}, "<Esc>", "<Cmd>noh<CR><Esc>", { desc = "Clear search highlight", silent = true} )
--- vim.keymap.set( "n", "<leader>l", "<cmd>Lazy<cr>", { desc = "LazyVim", silent = true} )
-vim.keymap.set( "n", "l", "<cmd>Lazy<cr>", { desc = "LazyVim", silent = true} )
-vim.keymap.set( "n", "<leader>l", "<cmd>Lazy<cr>", { desc = "LazyVim", silent = true} )
+vim.keymap.set( "n", "l", "<cmd>lazy<cr>", { desc = "lazyvim", silent = true} )
+vim.keymap.set( "n", "<leader>l", "<cmd>Lazy<cr>", { desc = "lazyvim", silent = true} )
+
+-- vim.keymap.set( "n", "<leader>/", "vgc<Esc>", { desc = "Comment/Uncomment" })
 
 
 

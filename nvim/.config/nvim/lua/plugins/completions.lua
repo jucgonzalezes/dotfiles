@@ -1,6 +1,11 @@
 return {
     {
+        "rsh7th/cmp-nvim-lsp",
+        event = "VeryLazy",
+    },
+    {
         "L3MON4D3/LuaSnip",
+        event = "VeryLazy",
         version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         dependencies = { 
             "rafamadriz/friendly-snippets",

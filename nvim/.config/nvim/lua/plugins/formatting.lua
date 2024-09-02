@@ -5,12 +5,11 @@ return {
 		cmd = { "ConformInfo" },
 		keys = {
 			{
-				-- Customize or remove this keymap to your liking
-				"<leader>fc",
+				"<leader>cf",
 				function()
 					require("conform").format({ async = true })
 				end,
-				mode = "",
+				mode = "n",
 				desc = "Format buffer",
 			},
 		},
@@ -23,7 +22,9 @@ return {
 				lsp_format = "fallback",
 			},
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 1000,
+				async = false,
+				lsp_fallback = true,
 			},
 		},
 	},

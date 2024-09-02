@@ -15,6 +15,7 @@ return {
 		opts = {
 			enable_autosnippets = true,
 		},
+		-- Loads friendly snippets
 		config = function(_, opts)
 			require("luasnip.loaders.from_vscode").lazy_load()
 			local ls = require("luasnip")
@@ -27,29 +28,49 @@ return {
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lsp", -- lsp support
+			"hrsh7th/cmp-buffer", -- source for text in buffer
+			"hrsh7th/cmp-path", -- source for filesystem paths
+			"L3M0N4D3/LuaSnip", -- Snippets engine
 		},
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 			local cmp = require("cmp")
-			local defaults = require("cmp.config.default")()
-			local auto_select = true
+			-- local defaults = require("cmp.config.default")()
+			-- local auto_select = true
 			local luasnip = require("luasnip")
 
 			return {
+				-- Sets LuaSnip to expand completions
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
 					end,
 				},
+				-- Add borders to the cmp window.
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
+					hover = cmp.config.window.bordered(),
 				},
+				-- Adds symbols to the left of the menu to facilitate snippet recognition.
+				formatting = {
+					fields = { "menu", "abbr", "kind" },
+					format = function(entry, item)
+						local menu_icon = {
+							nvim_lsp = "λ",
+							luasnip = "⋗",
+							buffer = "Ω",
+							path = "",
+						}
+
+						item.menu = menu_icon[entry.source.name]
+						return item
+					end,
+				},
+				-- Add keymaps for the snippets functionality
 				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
+					["<C-d>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
@@ -75,10 +96,11 @@ return {
 					end, { "i", "s" }),
 				}),
 				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "nvim_lsp" },
 				}, {
 					{ name = "buffer" },
+					{ name = "path" },
 				}),
 			}
 		end,

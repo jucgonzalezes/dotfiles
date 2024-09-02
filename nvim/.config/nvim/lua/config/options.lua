@@ -24,4 +24,3 @@ vim.opt.inccommand = "split"
 
 -- Use GUI colors
 vim.opt.termguicolors = true
-

@@ -6,7 +6,7 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		event = "VeryLazy",
-		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		version = "v2.3", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			"saadparwaiz1/cmp_luasnip",
@@ -31,7 +31,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp", -- lsp support
 			"hrsh7th/cmp-buffer", -- source for text in buffer
 			"hrsh7th/cmp-path", -- source for filesystem paths
-			"L3M0N4D3/LuaSnip", -- Snippets engine
+			"L3MON4D3/LuaSnip", -- Snippets engine
 		},
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
